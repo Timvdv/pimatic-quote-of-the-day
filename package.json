@@ -1,0 +1,28 @@
+{ "name": "pimatic-quote-of-the-day",
+  "description": "Quote of the day",
+  "author": "Tim van de Vathorst <tim@vandevathorst.nl> (http://timvandevathorst.nl)",
+  "main": "quote-of-the-day",
+  "files": [
+    "quote-of-the-day.coffee",
+    "README.md",
+    "quote-of-the-day-coffee-schema.coffee",
+    "device-config-schema.coffee"
+  ],
+  "version": "0.0.1",
+  "homepage": "http://your-plugin-website",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pimatic/pimatic-plugin-template.git"
+  },
+  "configSchema": "quote-of-the-day-config-schema.coffee",
+  "dependencies": {
+  },
+  "peerDependencies": {
+    "pimatic": "0.8.*"
+  },
+  "engines": {
+    "node": ">0.8.x",
+    "npm": ">1.1.x"
+  }
+}
