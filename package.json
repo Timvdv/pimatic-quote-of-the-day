@@ -6,15 +6,15 @@
   "files": [
     "quote-of-the-day.coffee",
     "README.md",
-    "quote-of-the-day-coffee-schema.coffee",
+    "quote-of-the-day-config-schema.coffee",
     "device-config-schema.coffee"
   ],
-  "version": "1.0.2",
+  "version": "1.0.22",
   "homepage": "https://github.com/Timvdv/pimatic-quote-of-the-day",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "git://github.com/pimatic/pimatic-plugin-template.git"
+    "url": "git://github.com/Timvdv/pimatic-quote-of-the-day.git"
   },
   "configSchema": "quote-of-the-day-config-schema.coffee",
   "dependencies": {},
@@ -26,7 +26,7 @@
     "npm": ">1.1.x"
   },
   "bugs": {
-    "url": "https://github.com/pimatic/pimatic-plugin-template/issues"
+    "url": "github.com/Timvdv/pimatic-quote-of-the-day/issues"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
