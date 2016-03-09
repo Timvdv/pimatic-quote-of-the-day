@@ -8,7 +8,6 @@ module.exports = (env) ->
   M = env.matcher
 
   request = require 'request'
-  querystring = require "querystring"
 
   class QuoteOfTheDay extends env.plugins.Plugin
     init: (app, @framework, @config) =>
@@ -79,8 +78,10 @@ module.exports = (env) ->
       Promise.resolve(@_author)
 
     setUrl_encoded_quote: (quote) ->
-      @_url_quote = quote
-      @emit "url_encoded_quote", querystring.escape(@_url_quote)
+      
+      split = quote.replace(/\ /g , '%20').replace("", "%20")
+      @_url_quote = split
+      @emit "url_encoded_quote", split
 
     getUrl_encoded_quote: () ->
       Promise.resolve(@_url_quote)
