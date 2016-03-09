@@ -13,5 +13,4 @@ module.exports = {
       quote:
         description: "the quote of the day"
         type: "string"
-        default: "test"
 }
