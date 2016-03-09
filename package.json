@@ -9,7 +9,7 @@
     "quote-of-the-day-coffee-schema.coffee",
     "device-config-schema.coffee"
   ],
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/Timvdv/pimatic-quote-of-the-day",
   "private": false,
   "repository": {
