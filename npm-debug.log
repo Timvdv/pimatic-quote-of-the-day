@@ -1,0 +1,74 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'adduser' ]
+2 info using npm@1.4.29
+3 info using node@v0.10.41
+4 warn invalid config init.author.url="timvandevathorst.nl"
+5 warn invalid config Must be a full url with 'http://'
+6 warn deprecated This version of npm lacks support for important features,
+7 warn deprecated such as scoped packages, offered by the primary npm
+8 warn deprecated registry. Consider upgrading to at least npm@2, if not the
+9 warn deprecated latest stable version. To upgrade to npm@2, run:
+10 warn deprecated npm -g install npm@latest-2
+11 warn deprecated To upgrade to the latest stable version, run:
+12 warn deprecated npm -g install npm@latest
+13 warn deprecated (Depending on how Node.js was installed on your system, you
+14 warn deprecated may need to prefix the preceding commands with `sudo`, or if
+15 warn deprecated on Windows, run them from an Administrator prompt.)
+16 warn deprecated If you're running the version of npm bundled with
+17 warn deprecated Node.js 0.10 LTS, be aware that the next version of 0.10 LTS
+18 warn deprecated will be bundled with a version of npm@2, which has some small
+19 warn deprecated backwards-incompatible changes made to `npm run-script` and
+20 warn deprecated semver behavior.
+21 warn Username must be lowercase
+22 verbose adduser before first PUT { name: 'timvdv',
+22 verbose adduser   password: 'XXXXX',
+22 verbose adduser   email: 'tim@vandevathorst.nl',
+22 verbose adduser   _id: 'org.couchdb.user:timvdv',
+22 verbose adduser   type: 'user',
+22 verbose adduser   roles: [],
+22 verbose adduser   date: '2016-03-09T14:10:32.755Z' }
+23 verbose request where is /-/user/org.couchdb.user:timvdv
+24 verbose request registry https://registry.npmjs.org/
+25 verbose request id ae8897a47b8afa8f
+26 verbose url raw /-/user/org.couchdb.user:timvdv
+27 verbose url resolving [ 'https://registry.npmjs.org/',
+27 verbose url resolving   './-/user/org.couchdb.user:timvdv' ]
+28 verbose url resolved https://registry.npmjs.org/-/user/org.couchdb.user:timvdv
+29 verbose request where is https://registry.npmjs.org/-/user/org.couchdb.user:timvdv
+30 info trying registry request attempt 1 at 15:10:32
+31 http PUT https://registry.npmjs.org/-/user/org.couchdb.user:timvdv
+32 http 400 https://registry.npmjs.org/-/user/org.couchdb.user:timvdv
+33 verbose headers { 'content-type': 'application/json',
+33 verbose headers   'cache-control': 'max-age=300',
+33 verbose headers   'content-length': '57',
+33 verbose headers   'accept-ranges': 'bytes',
+33 verbose headers   date: 'Wed, 09 Mar 2016 14:10:31 GMT',
+33 verbose headers   via: '1.1 varnish',
+33 verbose headers   connection: 'keep-alive',
+33 verbose headers   'x-served-by': 'cache-ams4141-AMS',
+33 verbose headers   'x-cache': 'MISS',
+33 verbose headers   'x-cache-hits': '0',
+33 verbose headers   'x-timer': 'S1457532631.247424,VS0,VE698' }
+34 verbose adduser back [ [Error: Unknown error while authenticating : -/user/org.couchdb.user:timvdv],
+34 verbose adduser   { ok: false, error: 'Unknown error while authenticating' },
+34 verbose adduser   '{"ok":false,"error":"Unknown error while authenticating"}' ]
+35 error Error: Unknown error while authenticating : -/user/org.couchdb.user:timvdv
+35 error     at RegClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:308:14)
+35 error     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:246:65)
+35 error     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:236:22)
+35 error     at Request.emit (events.js:98:17)
+35 error     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1142:14)
+35 error     at Request.emit (events.js:117:20)
+35 error     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1096:12)
+35 error     at IncomingMessage.emit (events.js:117:20)
+35 error     at _stream_readable.js:944:16
+35 error     at process._tickCallback (node.js:448:13)
+36 error If you need help, you may report this *entire* log,
+36 error including the npm and node versions, at:
+36 error     <http://github.com/npm/npm/issues>
+37 error System Darwin 15.3.0
+38 error command "/usr/local/bin/node" "/usr/local/bin/npm" "adduser"
+39 error cwd /Users/Tim/Projects/pimatic/pimatic-quote-of-the-day
+40 error node -v v0.10.41
+41 error npm -v 1.4.29
+42 verbose exit [ 1, true ]

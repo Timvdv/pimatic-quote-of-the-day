@@ -48,20 +48,13 @@ module.exports = (env) ->
       @getQuote()
 
     getHttpQuote: () ->
-      # request "http://quotes.rest/qod.json", (error, response, body) =>
-      #   if (!error && response.statusCode == 200)
-      #     data = JSON.parse(body)
-      #     if data.contents?
-      #       @setQuote data.contents.quotes[0].quote
-      #       @setAuthor data.contents.quotes[0].author
       new Promise( (resolve, reject) =>
-        request "http://catfacts-api.appspot.com/api/facts", (error, response, body) =>
+        request "http://quotes.rest/qod.json", (error, response, body) =>
           if (!error && response.statusCode == 200)
             data = JSON.parse(body)
-            env.logger.info("update...")
-            if data.facts?
-              @setQuote data.facts[0]
-              @setAuthor data.facts[0]
+            if data.contents?
+              @setQuote data.contents.quotes[0].quote
+              @setAuthor data.contents.quotes[0].author
               resolve data
             else
               reject "Unexpected response. :("
@@ -112,10 +105,8 @@ module.exports = (env) ->
       # Try to match the input string with:
       M(input, context).match('update quote ')
         .matchDevice(quotes, (next, d) ->
-          console.log('matched')
           m = next.match(' with ')
             .matchStringWithVars( (next, ts) ->
-              console.log('matched 2')
               m = next.match(' mode', optional: yes)
               if device? and device.id isnt d.id
                 context?.addError(""""#{input.trim()}" is ambiguous.""")
@@ -123,13 +114,11 @@ module.exports = (env) ->
 
               device = d
               valueTokens = ts
-              console.log(m.getFullMatch())
               match = m.getFullMatch()
             )
           )
 
       if match?
-        console.log('we got a match <3')
         if valueTokens.length is 1 and not isNaN(valueTokens[0])
           value = valueTokens[0]
           assert(not isNaN(value))
@@ -168,7 +157,6 @@ module.exports = (env) ->
       )
 
     executeAction: (simulate, value) =>
-      console.log('hierkom ik2')
       return @_doExecuteAction(simulate, value)
 
     hasRestoreAction: -> yes
