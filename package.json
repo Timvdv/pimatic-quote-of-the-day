@@ -2,12 +2,14 @@
   "name": "pimatic-quote-of-the-day",
   "description": "Quote of the day",
   "author": "Tim van de Vathorst <tim@vandevathorst.nl> (http://timvandevathorst.nl)",
+  "license": "GPL-2.0",
   "main": "quote-of-the-day",
   "files": [
     "quote-of-the-day.coffee",
     "README.md",
     "quote-of-the-day-config-schema.coffee",
-    "device-config-schema.coffee"
+    "device-config-schema.coffee",
+    "LICENSE"
   ],
   "version": "1.0.4",
   "homepage": "https://github.com/Timvdv/pimatic-quote-of-the-day",
@@ -17,9 +19,11 @@
     "url": "git://github.com/Timvdv/pimatic-quote-of-the-day.git"
   },
   "configSchema": "quote-of-the-day-config-schema.coffee",
-  "dependencies": {},
+  "dependencies": {
+    "request": "^2.70.0"
+  },
   "peerDependencies": {
-    "pimatic": "0.8.*"
+    "pimatic": ">=0.8.0 <1.0.0"
   },
   "engines": {
     "node": ">0.8.x",
@@ -30,6 +34,5 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "license": "ISC"
+  }
 }

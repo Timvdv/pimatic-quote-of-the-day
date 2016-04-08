@@ -37,29 +37,31 @@ module.exports = (env) ->
         type: "string"
 
     constructor: (@config) ->
-      @id = config.id
-      @name = config.name
+      @id = @config.id
+      @name = @config.name
       @_quote = ""
       @_author = ""
-      @_url_quote = config.quote
+      @_url_quote = @config.quote
       super()
-      @getHttpQuote()
-      @getQuote()
+      @getHttpQuote().catch (error) =>
+        env.logger.error error
 
     getHttpQuote: () ->
       new Promise( (resolve, reject) =>
         request "http://quotes.rest/qod.json", (error, response, body) =>
-          if (!error && response.statusCode == 200)
-            data = JSON.parse(body)
-            if data.contents?
-              @setQuote data.contents.quotes[0].quote
-              @setAuthor data.contents.quotes[0].author
-              resolve data
+          unless error?
+            if (response.statusCode == 200)
+              data = JSON.parse(body)
+              if data.contents?
+                @setQuote data.contents.quotes[0].quote
+                @setAuthor data.contents.quotes[0].author
+                resolve data
+              else
+                reject "Unexpected response. :("
             else
-              reject "Unexpected response. :("
+              reject "Was expecting status code 200 but got #{response.statusCode}"
           else
-            reject error.message ?
-              "Was expecting status code 200 but got" + response.statusCode
+            reject error.message? ? error + ""
       )
 
     setQuote: (quote) ->
