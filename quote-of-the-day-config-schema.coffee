@@ -1,9 +1,5 @@
 module.exports = {
-  title: "my plugin config options"
+  title: "pimatic-quote-of-the-day options"
   type: "object"
-  properties:
-    option1:
-      description: "Some option"
-      type: "string"
-      default: "foo"
+  properties: {}
 }
