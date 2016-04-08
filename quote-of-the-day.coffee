@@ -37,11 +37,11 @@ module.exports = (env) ->
         type: "string"
 
     constructor: (@config) ->
-      @id = config.id
-      @name = config.name
+      @id = @config.id
+      @name = @config.name
       @_quote = ""
       @_author = ""
-      @_url_quote = config.quote
+      @_url_quote = @config.quote
       super()
       @getHttpQuote()
       @getQuote()
