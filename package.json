@@ -17,7 +17,9 @@
     "url": "git://github.com/Timvdv/pimatic-quote-of-the-day.git"
   },
   "configSchema": "quote-of-the-day-config-schema.coffee",
-  "dependencies": {},
+  "dependencies": {
+    "request": "^2.70.0"
+  },
   "peerDependencies": {
     "pimatic": "0.8.*"
   },
