@@ -3,6 +3,7 @@ module.exports = {
   QuoteDevice:
     title: "Quote of the day"
     type: "object"
+    extensions: ["xLink", "xAttributeOptions"]
     properties:
       id:
         description: "the id"
@@ -13,4 +14,5 @@ module.exports = {
       quote:
         description: "the quote of the day"
         type: "string"
+        default: ""
 }
