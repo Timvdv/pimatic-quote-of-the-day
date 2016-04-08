@@ -32,18 +32,14 @@ module.exports = (env) ->
       author:
         description: "the quote author"
         type: "string"
-      url_encoded_quote:
-        description: "the URL encoded quote"
-        type: "string"
 
     constructor: (@config) ->
       @id = @config.id
       @name = @config.name
       @_quote = ""
       @_author = ""
-      @_url_quote = @config.quote
       super()
-      @getHttpQuote().catch (error) =>
+      @getHttpQuote().catch (error) ->
         env.logger.error error
 
     getHttpQuote: () ->
@@ -66,7 +62,6 @@ module.exports = (env) ->
 
     setQuote: (quote) ->
       @_quote = quote
-      this.setUrl_encoded_quote(quote)
       @emit "quote", @_quote
 
     getQuote: () ->
@@ -78,15 +73,6 @@ module.exports = (env) ->
 
     getAuthor: () ->
       Promise.resolve(@_author)
-
-    setUrl_encoded_quote: (quote) ->
-      
-      split = quote.replace(/\ /g , '%20').replace("", "%20")
-      @_url_quote = split
-      @emit "url_encoded_quote", split
-
-    getUrl_encoded_quote: () ->
-      Promise.resolve(@_url_quote)
 
   class QuoteDeviceModeActionProvider extends env.actions.ActionProvider
 
