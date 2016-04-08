@@ -7,7 +7,7 @@ module.exports = {
     properties:
       id:
         description: "the id"
-        type: "numer"
+        type: "number"
       name:
         description: "name"
         type: "string"
