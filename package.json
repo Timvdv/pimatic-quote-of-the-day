@@ -1,38 +1,92 @@
 {
-  "name": "pimatic-quote-of-the-day",
-  "description": "Quote of the day",
-  "author": "Tim van de Vathorst <tim@vandevathorst.nl> (http://timvandevathorst.nl)",
-  "license": "GPL-2.0",
-  "main": "quote-of-the-day",
-  "files": [
-    "quote-of-the-day.coffee",
-    "README.md",
-    "quote-of-the-day-config-schema.coffee",
-    "device-config-schema.coffee",
-    "LICENSE"
+  "_args": [
+    [
+      "pimatic-quote-of-the-day@1.0.22",
+      "/home/tim/pimatic-test"
+    ]
   ],
-  "version": "1.0.6",
-  "homepage": "https://github.com/Timvdv/pimatic-quote-of-the-day",
-  "private": false,
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/Timvdv/pimatic-quote-of-the-day.git"
+  "_from": "pimatic-quote-of-the-day@1.0.22",
+  "_id": "pimatic-quote-of-the-day@1.0.22",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/pimatic-quote-of-the-day",
+  "_nodeVersion": "0.10.41",
+  "_npmOperationalInternal": {
+    "host": "packages-13-west.internal.npmjs.com",
+    "tmp": "tmp/pimatic-quote-of-the-day-1.0.22.tgz_1457547856684_0.6502617786172777"
+  },
+  "_npmUser": {
+    "email": "info@timvandevathorst.nl",
+    "name": "timvdv"
+  },
+  "_npmVersion": "3.7.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "pimatic-quote-of-the-day",
+    "raw": "pimatic-quote-of-the-day@1.0.22",
+    "rawSpec": "1.0.22",
+    "scope": null,
+    "spec": "1.0.22",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/pimatic-quote-of-the-day/-/pimatic-quote-of-the-day-1.0.22.tgz",
+  "_shasum": "e2193b41aafdf6745ca4d60ee87be25aafc5301c",
+  "_shrinkwrap": null,
+  "_spec": "pimatic-quote-of-the-day@1.0.22",
+  "_where": "/home/tim/pimatic-test",
+  "author": {
+    "email": "tim@vandevathorst.nl",
+    "name": "Tim van de Vathorst",
+    "url": "http://timvandevathorst.nl"
+  },
+  "bugs": {
+    "url": "https://github.com/Timvdv/pimatic-quote-of-the-day/issues"
   },
   "configSchema": "quote-of-the-day-config-schema.coffee",
-  "dependencies": {
-    "request": "^2.70.0"
-  },
-  "peerDependencies": {
-    "pimatic": ">=0.8.0 <1.0.0"
+  "dependencies": {},
+  "description": "Quote of the day",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "e2193b41aafdf6745ca4d60ee87be25aafc5301c",
+    "tarball": "https://registry.npmjs.org/pimatic-quote-of-the-day/-/pimatic-quote-of-the-day-1.0.22.tgz"
   },
   "engines": {
     "node": ">0.8.x",
     "npm": ">1.1.x"
   },
-  "bugs": {
-    "url": "github.com/Timvdv/pimatic-quote-of-the-day/issues"
+  "files": [
+    "README.md",
+    "device-config-schema.coffee",
+    "quote-of-the-day-config-schema.coffee",
+    "quote-of-the-day.coffee"
+  ],
+  "gitHead": "74e0b03456e9ada8c0c3cfb0f24ea37ff9fa6433",
+  "homepage": "https://github.com/Timvdv/pimatic-quote-of-the-day",
+  "license": "ISC",
+  "main": "quote-of-the-day",
+  "maintainers": [
+    {
+      "name": "timvdv",
+      "email": "info@timvandevathorst.nl"
+    }
+  ],
+  "name": "pimatic-quote-of-the-day",
+  "optionalDependencies": {},
+  "peerDependencies": {
+    "pimatic": "0.8.*"
+  },
+  "private": false,
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Timvdv/pimatic-quote-of-the-day.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  }
+  },
+  "version": "1.0.3"
 }

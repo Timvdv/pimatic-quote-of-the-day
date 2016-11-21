@@ -8,6 +8,7 @@ module.exports = (env) ->
   M = env.matcher
 
   request = require 'request'
+  querystring = require "querystring"
 
   class QuoteOfTheDay extends env.plugins.Plugin
     init: (app, @framework, @config) =>
@@ -17,7 +18,7 @@ module.exports = (env) ->
 
       @framework.deviceManager.registerDeviceClass("QuoteDevice", {
         configDef: deviceConfigDef.QuoteDevice,
-        createCallback: (config) -> new QuoteDevice(config)
+        createCallback: (@config) -> new QuoteDevice(@config)
       })
 
       @framework.ruleManager.addActionProvider(
@@ -32,12 +33,16 @@ module.exports = (env) ->
       author:
         description: "the quote author"
         type: "string"
+      url_encoded_quote:
+        description: "the URL encoded quote"
+        type: "string"
 
     constructor: (@config) ->
       @id = @config.id
       @name = @config.name
       @_quote = ""
       @_author = ""
+      @_url_quote = @config.quote
       super()
       @getHttpQuote().catch (error) ->
         env.logger.error error
@@ -62,6 +67,7 @@ module.exports = (env) ->
 
     setQuote: (quote) ->
       @_quote = quote
+      this.setUrl_encoded_quote(quote)
       @emit "quote", @_quote
 
     getQuote: () ->
@@ -73,6 +79,13 @@ module.exports = (env) ->
 
     getAuthor: () ->
       Promise.resolve(@_author)
+
+    setUrl_encoded_quote: (quote) ->
+      @_url_quote = quote
+      @emit "url_encoded_quote", querystring.escape(@_url_quote)
+
+    getUrl_encoded_quote: () ->
+      Promise.resolve(@_url_quote)
 
   class QuoteDeviceModeActionProvider extends env.actions.ActionProvider
 
@@ -152,5 +165,4 @@ module.exports = (env) ->
     executeRestoreAction: (simulate) =>
       Promise.resolve(@_doExecuteAction(simulate))
 
-  quote = new QuoteOfTheDay
-  return quote
+  return new QuoteOfTheDay
